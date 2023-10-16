@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Signup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form {
+    padding: 20px;
+  }
+  
+  .tab-group {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tab {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #ccc;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  header {
+    text-align: center;
+  }
+  a{
+    margin:auto;
+    text-decoration:none;
+    padding:10px;
+  }
+  form.hover
+  {
+    text-transform: lowercase;
+    background-color: #af0303;
+  }
+  h1{
+    color: rgb(243, 237, 237);
+    text-decoration:underline;
+    padding:20px;
+    font-family:'Times New Roman', Times, serif;
+  }*
+  h2{
+    color:rgb(227, 226, 233);
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    padding:2%;
+    text-decoration:underline;
+    
+  }
+  
+  input{
+    background-color:rgb(10, 228, 177);
+  }
+  input:hover
+  {
+    background-color:rgb(233, 221, 221);
+    margin-bottom:0rem;
+    width: 0px,50px;
+  }
+  button
+  {
+    border-color: white;
+    background-color: #139fdb;
+  }
+  button:hover{
+    background-color: #ccc;
+  }
+  #input{
+    border-radius: 0px,50px;
+  }
+  select{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    background-color:rgb(10, 228, 177);
+    cursor: pointer;
+    margin-bottom: 10px;
+    color:  #3c3b3b;
+  }
+  select:hover{
+    background-color:rgb(240, 248, 246);
+  }
+  .container{
+    color:white;
+    padding:2px;
+  }
+  .form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: rgb(10, 228, 177);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+  color: #ccc;
+}
+.form .gender {
+  column-gap: 5px;
+  
+}
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+  color: #fff;
+}
+.gender label {
+  color: #f6f0f0;
+}
+  </style>
+</head>
+<body bgcolor="black">
+  <header>
+    <h1>Online Student Portal</h1>
+  </header>
+
+  <div class="container">
+    <div class="form">
+      <ul class="tab-group">
+        <!-- <li class="tab active"><a href="#signup">Sign Up</a></li> -->
+        <!-- <li class="tab active"><a href="#login">Log In</a></li> -->
+      </ul>
+
+      <div class="tab-content">
+        <div id="signup" class="tab-pane active">
+          <h2>Registration Form</h2>
+
+          <form action="signup" method="post">
+            <input type="text" name="name" placeholder="first Name">
+            <input type="text" name="name" placeholder="Middle Name">
+            <input type="text" name="name" placeholder="last Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="confirmPassword" placeholder="Confirm Password">
+            
+            <div class="coloumn">
+                <div class="select-box">
+                    <select>
+                        <option>India</option>
+                        <option>Canada</option>
+                        <option>Japan</option>
+                        <option>China</option>
+                        <option>Tawan</option>
+                        <option>Thailand</option>
+                    </select>
+                </div>
+            </div>
+            <input type="phonenumber" name="phonenumber" placeholder="Mobile Number ">
+            <div class="input-box">
+                <label >Birth Date</label>
+                <input type="date" placeholder="Enter birth date" required />
+            <div class="gender-box">
+
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" checked>
+                        <label for="check-male">Male</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender" checked>
+                        <label for="check-female">Female</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-other" name="gender" checked>
+                        <label for="check-other">Other</label>
+                    </div>
+                    <div class="input-box">
+                        
+                        <input type="address" placeholder="Address" required />
+                </div>
+            </div>
+
+
+           
+            
+
+            <button type="submit">Submit</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

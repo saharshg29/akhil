@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Signup</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form {
+    padding: 20px;
+  }
+  
+  .tab-group {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tab {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #ccc;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  header {
+    text-align: center;
+  }
+  a{
+    margin:auto;
+    text-decoration:none;
+    padding:10px;
+  }
+  a:hover{
+    color:#af0303;
+  }
+  form.hover
+  {
+    text-transform: lowercase;
+    background-color: #af0303;
+  }
+  h1{
+    color: rgb(243, 237, 237);
+    text-decoration:underline;
+    padding:20px;
+    font-family:'Times New Roman', Times, serif;
+  }
+  h2{
+    color:rgb(227, 226, 233);
+    text-align: left;
+    font-family:'Times New Roman', Times, serif;
+    padding:2%;
+    text-decoration:underline;
+    
+  }
+  
+  input{
+    background-color:rgb(10, 228, 177);
+  }
+  input:hover
+  {
+    background-color:rgb(233, 221, 221);
+    margin-bottom:0rem;
+    width: 0px,50px;
+  }
+  button
+  {
+    border-color: white;
+    background-color: #139fdb;
+  }
+  button:hover{
+    background-color: #ccc;
+  }
+  #input{
+    border-radius: 0px,50px;
+  }
+  a{
+    padding: 6px;
+    margin:auto;
+    color: chocolate;
+    text-decoration: underline;
+  }
+  </style>
+  <script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (username.trim() === '' || password.trim() === '') {
+            alert('Please enter both username and password.');
+            return false;
+        }
+
+        // Add more complex validation logic if needed
+
+        // Simulating a successful login by redirecting to the medical store home page
+        window.location.href = 'home.html';
+
+        return false; // Preventing the form from submitting (remove this line in a real scenario)
+    }
+</script>
+</head>
+<body bgcolor="black">
+  <header>
+    <h1>Online Student Portal</h1>
+  </header>
+
+  <div class="container">
+    <div class="form">
+      <ul class="tab-group">
+        <!-- <li class="tab active"><a href="#signup">Sign Up</a></li> -->
+        <!-- <li class="tab active"><a href="#login">Log In</a></li> -->
+      </ul>
+
+      <div class="tab-content">
+        <div id="login" class="tab-pane active">
+          <h2>Login</h2>
+
+          <form action="login" method="post">
+            <input type="email" name="email" placeholder="Email or user name">
+            <input type="password" name="password" placeholder="Password">
+            <a href="home.html"><button type="submit" >Login</a></button>
+            <a href="signin.html" align="left">Don't have an account?Sign Up</a>
+            <a href="home.html" align="left">Home</a>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

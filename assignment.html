@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>coursedetails</title>
+    <style>
+         a{
+            color:black;
+            background-color:rgb(182, 234, 72);
+            border:2px solid ;
+            margin:5px;
+            padding:5px;
+            /* margin: 20px; */
+        }
+        a:hover
+        {
+            color:rgb(200, 15, 15);
+            background-color: aliceblue;
+        }
+        /* CSS styles for the table */
+    .assignment-table {
+      width: 800px;
+      border-collapse: collapse;
+      margin: 20px;
+      background-color: rgb(44, 223, 243);
+    }
+    .assignment-row {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      background-color: rgb(83, 220, 247);
+    }
+    .assignment-label, .assignment-data {
+      padding: 5px;
+      background-color: rgb(44, 223, 243);;
+    }
+    h1{
+        color: aliceblue;
+    }
+    label{
+        color: rgb(245, 237, 237);
+        font-size: large;
+
+    }
+    select{
+        color: rgb(239, 107, 18);
+        font-size: medium;
+    }
+    </style>
+</head>
+<body bgcolor="black">
+    <a href="home.html">click->home</a>
+    <h1>Student Assignment Details</h1>
+  <label for="subject-select">Select Assignment Subject:</label>
+  <select id="subject-select" onchange="updateAssignmentDetails()">
+    <option value="Web And Mobile Application Devolopment">Web And Mobile Application Devolopment</option>
+    <option value="Operating Systems">Operating Systems</option>
+    <option value="Formal Languages And Autamata Theroy">Formal Languages And Autamata Theroy</option>
+    <option value="Wind Energy technologies">Wind Energy technologies</option>
+  </select>
+  <div class="assignment-table" id="assignment-details">
+    <!-- Assignment details will be displayed here -->
+  </div>
+
+  <script>
+    function updateAssignmentDetails() {
+      const subjectSelect = document.getElementById("subject-select");
+      const selectedSubject = subjectSelect.value;
+      const assignmentDetailsDiv = document.getElementById("assignment-details");
+
+      // Clear existing assignment details
+      assignmentDetailsDiv.innerHTML = "";
+
+      // Simulate fetching assignment details based on the selected subject
+      let details = {};
+      if (selectedSubject === "Web And Mobile Application Devolopment") {
+        details = {
+          "Assignment Name": "Web And Mobile Application Devolopment",
+          "Due Date": "November 15, 2023",
+          "Status": "Incomplete",
+        };
+      } else if (selectedSubject === "Operating Systems") {
+        details = {
+          "Assignment Name": "Operating Systems",
+          "Due Date": "December 5, 2023",
+          "Status": "Complete",
+        };
+      } else if (selectedSubject === "Formal Languages And Autamata Theroy") {
+        details = {
+          "Assignment Name": "Formal Languages And Autamata Theroy",
+          "Due Date": "November 30, 2023",
+          "Status": "Submitted",
+        };
+    } else if (selectedSubject === "Wind Energy technologies") {
+        details = {
+          "Assignment Name": "Wind Energy technologies",
+          "Due Date": "November 30, 2023",
+          "Status": "Submitted",
+        };
+        
+      }
+
+      // Display assignment details
+      for (const key in details) {
+        const row = document.createElement("div");
+        row.className = "assignment-row";
+        const label = document.createElement("div");
+        label.className = "assignment-label";
+        label.textContent = key + ":";
+        const data = document.createElement("div");
+        data.className = "assignment-data";
+        data.textContent = details[key];
+        row.appendChild(label);
+        row.appendChild(data);
+        assignmentDetailsDiv.appendChild(row);
+      }
+    }
+
+    // Initial assignment details display
+    updateAssignmentDetails();
+  </script>
+</body>
+</html>

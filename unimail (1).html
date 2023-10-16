@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>coursedetails</title>
+    <style>
+         a{
+            color:black;
+            background-color:rgb(182, 234, 72);
+            border:2px solid ;
+            margin:5px;
+            padding:5px;
+            margin: 20px;
+        }
+        a:hover
+        {
+            color:rgb(200, 15, 15);
+            background-color: aliceblue;
+        }
+        h1{
+            color: aliceblue;
+            text-align: center;
+
+        }
+        form{
+            color: aliceblue;
+            text-align: center;
+            margin-top: 6%;
+        }
+    </style>
+      <script>
+        function submitForm() {
+          // Get form values
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("message").value;
+    
+          // You can implement further validation here if needed
+    
+          // Send the form data to your support team (you may use a backend server)
+          alert("Thank you, " + name + "! Your message has been sent to our support team.");
+          // You can also send the data to your server for further processing.
+    
+          // Clear the form
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+        }
+
+      </script>
+</head>
+<body bgcolor="black">
+    <a href="home.html">click->home</a>
+    <h1>Contact Student Portal Support</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Name"><br><br>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email" required><br><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea id="message" rows="4" placeholder="Text" required></textarea><br><br>
+  
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    
+</body>
+</html>
